@@ -1,13 +1,13 @@
 #include <iostream>
 #include <vector>
-#include <unordered_map>
 #include <algorithm>
+#include <unordered_map>
 using namespace std;
 
 int main() {
     int a, b;
     cin >> a >> b;
-    vector<vector<int>> v(a, vector<int> (b));
+    vector<vector<int>> v(a, vector<int>(b));
     unordered_map<int, vector<vector<int>>> m;
 
     for (int i = 0; i < a; i++){
@@ -23,11 +23,12 @@ int main() {
     for (auto p : m){
         sums.push_back(p.first);
     }
+
     sort(sums.rbegin(), sums.rend());
 
-    for (int s : sums){
+    for (auto s : sums){
         sort(m[s].begin(), m[s].end());
-        for (auto r : m[s]){
+        for (auto r :m[s]){
             for (auto x : r){
                 cout << x << " ";
             }

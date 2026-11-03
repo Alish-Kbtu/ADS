@@ -38,6 +38,7 @@ int main() {
     for (int i = 0; i < b; i++){
         cin >> v2[i];
     }
+
     vector<int> ans;
     ans = ms(v1, v2);
 

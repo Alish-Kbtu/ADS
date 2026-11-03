@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
-#include <string>
 #include <sstream>
+#include <string>
 using namespace std;
 
 vector<string> ms(vector<string> a){
@@ -13,10 +13,10 @@ vector<string> ms(vector<string> a){
     vector<string> l = ms(vector<string>(a.begin(), a.begin() + mid));
     vector<string> r = ms(vector<string>(a.begin() + mid, a.end()));
 
-    int i = 0, j = 0;
     vector<string> res;
+    int i = 0, j = 0;
     while (i < l.size() && j < r.size()){
-        if (l[i].size() <= r[j].size()){        
+        if (l[i].size() <= r[j].size()){
             res.push_back(l[i++]);
         } else {
             res.push_back(r[j++]);
@@ -30,7 +30,6 @@ vector<string> ms(vector<string> a){
     }
     return res;
 }
-
 
 int main() {
     int a;
@@ -50,9 +49,9 @@ int main() {
 
         v = ms(v);
 
-        for (int j = 0; j < v.size(); j++){
+        for (int j = 0; j < v.size(); i++){
             cout << v[j] << " ";
         }
-        cout << '\n';
+        cout << "\n";
     }
 }

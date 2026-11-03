@@ -3,10 +3,6 @@
 using namespace std;
 
 vector<int> ms(int n, vector<int> a){
-    if (a.size() <= 1){
-        return a;
-    }
-
     vector<int> res(n);
     int i = 0, j = n - 1;
     int pos = n - 1;
