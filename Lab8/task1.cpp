@@ -1,36 +1,37 @@
 #include <iostream>
 #include <vector>
+#include <unordered_map>
 #include <string>
-#include <unordered_set>
 using namespace std;
 
-long long mod = 1000000007;
+const long long mod = 1000000007LL;
 
-long long h(string s){
-    long long res = 0;
-    long long p = 1;
+string h(const string& s){
+    long long h = 0, p = 1;
     for (char c : s){
-        res = (res + (c - 47) * p) % mod;
+        h = (h + (c - 47) * p) % mod;
         p = p * 11 % mod;
     }
-    return res;
+
+    return to_string(h);
 }
 
 int main() {
     int a;
     cin >> a;
-    vector<string> v(2 * a);
-    unordered_set<string> s;
+    vector<string> v(a * 2);
+    unordered_map<string, int> mp;
     for (int i = 0; i < a * 2; i++){
         cin >> v[i];
-        s.insert(v[i]);
+        mp[v[i]]++;
     }
 
-    long long c = 0;
-    for (int i = 0; i < a * 2; i++){
-        string x = to_string(h(v[i]));
-        if (s.count(x)){
-            cout << "Hash of string \"" << v[i] << "\" is " << x << "\n";
+    int c = 0;
+    for (int i = 0; i < a * 2 && c < a; i++){
+        string x = h(v[i]);
+        if (mp.count(x)){
+            cout << "Hash of string \"" << v[i] << "\" is " << x << '\n';
+            c++;
         }
     }
 }

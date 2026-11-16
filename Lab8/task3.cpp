@@ -17,7 +17,7 @@ int main() {
     for (int i = 0; i < a; i++){
         long long d = v[i] - prev;
         long long n = d / pow(2, i);
-        ans += 'a' + n;
+        ans += n + 'a';
         prev = v[i];
     }
     cout << ans;
